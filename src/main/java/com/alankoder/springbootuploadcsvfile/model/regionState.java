@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 public class regionState extends areaCounty {
 
     @Column(name = "growth")
-    private Integer growth;
+    private Double growth;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "state_id")
@@ -23,7 +23,7 @@ public class regionState extends areaCounty {
 
     }
 
-    public regionState(long id, String state_id, String name, Integer population, Integer growth,
+    public regionState(long id, String state_id, String name, Integer population, Double growth,
             List<areaCounty> listCountyByStateId) {
         super(id, state_id, name, population);
         this.growth = growth;
