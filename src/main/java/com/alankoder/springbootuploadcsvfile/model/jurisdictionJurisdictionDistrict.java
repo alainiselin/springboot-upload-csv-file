@@ -20,7 +20,7 @@ public class jurisdictionJurisdictionDistrict {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "courtCircuitNumber")
     private List<courtCourt> listCourtByCourtCircuitNumber;
 
@@ -42,5 +42,22 @@ public class jurisdictionJurisdictionDistrict {
 
     @Column(name = "distance")
     private Double distance;
+
+    public jurisdictionJurisdictionDistrict() {
+
+    }
+
+    public jurisdictionJurisdictionDistrict(long id, List<courtCourt> listCourtByCourtCircuitNumber,
+            com.alankoder.springbootuploadcsvfile.model.areaCounty areaCounty, String jurisdictionDistrictName,
+            Integer courtCircuitNumber, String state_id, String chiefJudge, Double distance) {
+        this.id = id;
+        this.listCourtByCourtCircuitNumber = listCourtByCourtCircuitNumber;
+        this.areaCounty = areaCounty;
+        this.jurisdictionDistrictName = jurisdictionDistrictName;
+        this.courtCircuitNumber = courtCircuitNumber;
+        this.state_id = state_id;
+        this.chiefJudge = chiefJudge;
+        this.distance = distance;
+    }
 
 }

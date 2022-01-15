@@ -19,4 +19,15 @@ public class courtCourt {
     @Column(name = "circuitNumber")
     private Integer circuitNumber;
 
+    public courtCourt() {
+
+    }
+
+    public courtCourt(long id, String name, Integer circuitNumber) {
+        this.id = id;
+        this.name = name;
+        this.circuitNumber = circuitNumber;
+    }
+
+    
 }
