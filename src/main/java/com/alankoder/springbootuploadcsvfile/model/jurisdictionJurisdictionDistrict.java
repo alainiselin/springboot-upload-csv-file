@@ -1,8 +1,6 @@
 package com.alankoder.springbootuploadcsvfile.model;
 
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+
 
 @Entity
 public class jurisdictionJurisdictionDistrict {
@@ -20,9 +18,9 @@ public class jurisdictionJurisdictionDistrict {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "courtCircuitNumber")
-    private List<courtCourt> listCourtByCourtCircuitNumber;
+    private courtCourt courtCourt;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "state_id")
@@ -47,11 +45,11 @@ public class jurisdictionJurisdictionDistrict {
 
     }
 
-    public jurisdictionJurisdictionDistrict(long id, List<courtCourt> listCourtByCourtCircuitNumber,
+    public jurisdictionJurisdictionDistrict(long id, com.alankoder.springbootuploadcsvfile.model.courtCourt courtCourt,
             com.alankoder.springbootuploadcsvfile.model.areaCounty areaCounty, String jurisdictionDistrictName,
             Integer courtCircuitNumber, String state_id, String chiefJudge, Double distance) {
         this.id = id;
-        this.listCourtByCourtCircuitNumber = listCourtByCourtCircuitNumber;
+        this.courtCourt = courtCourt;
         this.areaCounty = areaCounty;
         this.jurisdictionDistrictName = jurisdictionDistrictName;
         this.courtCircuitNumber = courtCircuitNumber;
@@ -59,5 +57,7 @@ public class jurisdictionJurisdictionDistrict {
         this.chiefJudge = chiefJudge;
         this.distance = distance;
     }
+
+
 
 }
