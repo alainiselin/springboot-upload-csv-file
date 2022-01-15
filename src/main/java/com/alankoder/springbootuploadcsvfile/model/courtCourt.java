@@ -18,25 +18,22 @@ public class courtCourt {
     private long id;
 
     @OneToMany(mappedBy = "circuitCourtNumber")
-    private List<jurisdictionJurisdictionDistrict> listJurisdictionDistrictByCircuitCourtNumber = new ArrayList<jurisdictionJurisdictionDistrict>();
+    private List<jurisdictionJurisdictionDistrict> listJurisdictionDistrictByCourtCircuitNumber = new ArrayList<jurisdictionJurisdictionDistrict>();
 
     @Column(name = "name")
     private String name;
 
-    @Column(name = "circuitNumber")
-    private Integer circuitNumber;
-
- 
+    @Column(name = "courtCircuitNumber")
+    private Integer courtCircuitNumber;
 
     public courtCourt() {
 
     }
 
-    public courtCourt(long id, String name, Integer circuitNumber) {
+    public courtCourt(long id, String name, Integer courtCircuitNumber) {
         this.id = id;
         this.name = name;
-        this.circuitNumber = circuitNumber;
+        this.courtCircuitNumber = courtCircuitNumber;
     }
 
-    
 }

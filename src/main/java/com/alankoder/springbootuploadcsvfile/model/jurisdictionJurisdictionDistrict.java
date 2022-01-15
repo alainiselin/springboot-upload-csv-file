@@ -1,6 +1,5 @@
 package com.alankoder.springbootuploadcsvfile.model;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,7 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
 
 @Entity
 public class jurisdictionJurisdictionDistrict {
@@ -57,7 +55,5 @@ public class jurisdictionJurisdictionDistrict {
         this.chiefJudge = chiefJudge;
         this.distance = distance;
     }
-
-
 
 }
