@@ -9,7 +9,7 @@ public class TestGreetingRestController {
 
     @PostMapping("/greeting")
     public String getGreeting() {
-        return "TestGreeting";
+        return "TestGreeting Test change 01";
     }
 
 }
