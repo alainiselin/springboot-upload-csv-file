@@ -33,4 +33,30 @@ public class regionState extends areaCounty {
         this.listCountyByStateId = listCountyByStateId;
     }
 
+    public Double getGrowth() {
+        return growth;
+    }
+
+    public void setGrowth(Double growth) {
+        this.growth = growth;
+    }
+
+    public String getState_id() {
+        return state_id;
+    }
+
+    public void setState_id(String state_id) {
+        this.state_id = state_id;
+    }
+
+    public List<areaCounty> getListCountyByStateId() {
+        return listCountyByStateId;
+    }
+
+    public void setListCountyByStateId(List<areaCounty> listCountyByStateId) {
+        this.listCountyByStateId = listCountyByStateId;
+    }
+
+    
+
 }

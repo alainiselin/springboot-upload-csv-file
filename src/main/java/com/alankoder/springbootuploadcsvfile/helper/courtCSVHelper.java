@@ -16,7 +16,7 @@ import com.alankoder.springbootuploadcsvfile.model.courtCourt;
 
 public class courtCSVHelper {
     public static String TYPE = "text/csv";
-    static String[] HEADERs = { "Id", "name", "courtCircuitNumber" };
+    static String[] HEADERs = { "id", "courtCircuitNumber", "name" };
 
     public static boolean hasCSVFormat(MultipartFile file) {
 
@@ -38,9 +38,9 @@ public class courtCSVHelper {
 
             for (CSVRecord csvRecord : csvRecords) {
                 courtCourt court = new courtCourt(
-                        Long.parseLong(csvRecord.get("Id")),
-                        csvRecord.get("name"),
-                        Integer.parseInt(csvRecord.get("courtCircuitNumber")));
+                        Long.parseLong(csvRecord.get("id")),
+                        Integer.parseInt(csvRecord.get("courtCircuitNumber")),
+                        csvRecord.get("name"));
 
                 listCourts.add(court);
             }

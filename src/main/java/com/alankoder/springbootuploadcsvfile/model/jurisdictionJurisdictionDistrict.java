@@ -50,4 +50,54 @@ public class jurisdictionJurisdictionDistrict {
         this.distance = distance;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public courtCourt getCourtCourt() {
+        return courtCourt;
+    }
+
+    public void setCourtCourt(courtCourt courtCourt) {
+        this.courtCourt = courtCourt;
+    }
+
+    public areaCounty getAreaCounty() {
+        return areaCounty;
+    }
+
+    public void setAreaCounty(areaCounty areaCounty) {
+        this.areaCounty = areaCounty;
+    }
+
+    public String getJurisdictionDistrictName() {
+        return jurisdictionDistrictName;
+    }
+
+    public void setJurisdictionDistrictName(String jurisdictionDistrictName) {
+        this.jurisdictionDistrictName = jurisdictionDistrictName;
+    }
+
+    public String getChiefJudge() {
+        return chiefJudge;
+    }
+
+    public void setChiefJudge(String chiefJudge) {
+        this.chiefJudge = chiefJudge;
+    }
+
+    public Double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(Double distance) {
+        this.distance = distance;
+    }
+
+    
+
 }

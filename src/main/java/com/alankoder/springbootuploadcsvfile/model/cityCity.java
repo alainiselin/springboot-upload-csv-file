@@ -22,4 +22,14 @@ public class cityCity extends areaCounty {
         this.density = density;
     }
 
+    public Integer getDensity() {
+        return density;
+    }
+
+    public void setDensity(Integer density) {
+        this.density = density;
+    }
+
+    
+
 }

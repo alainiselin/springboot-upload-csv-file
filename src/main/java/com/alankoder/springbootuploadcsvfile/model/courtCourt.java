@@ -41,11 +41,43 @@ public class courtCourt {
         this.courtCircuitNumber = courtCircuitNumber;
     }
 
-    public courtCourt(long id, String name, Integer courtCircuitNumber){
+    public courtCourt(long id, Integer courtCircuitNumber, String name) {
         this.id = id;
+        this.courtCircuitNumber = courtCircuitNumber;
         this.name = name;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public List<jurisdictionJurisdictionDistrict> getListJurisdictionDistrictByCourtCircuitNumber() {
+        return listJurisdictionDistrictByCourtCircuitNumber;
+    }
+
+    public void setListJurisdictionDistrictByCourtCircuitNumber(
+            List<jurisdictionJurisdictionDistrict> listJurisdictionDistrictByCourtCircuitNumber) {
+        this.listJurisdictionDistrictByCourtCircuitNumber = listJurisdictionDistrictByCourtCircuitNumber;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getCourtCircuitNumber() {
+        return courtCircuitNumber;
+    }
+
+    public void setCourtCircuitNumber(Integer courtCircuitNumber) {
         this.courtCircuitNumber = courtCircuitNumber;
     }
-    
 
 }

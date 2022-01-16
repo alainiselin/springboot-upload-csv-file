@@ -58,6 +58,47 @@ public class areaCounty {
         this.population = population;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public List<jurisdictionJurisdictionDistrict> getListJurisdictionDistrictByStateId() {
+        return listJurisdictionDistrictByStateId;
+    }
+
+    public void setListJurisdictionDistrictByStateId(
+            List<jurisdictionJurisdictionDistrict> listJurisdictionDistrictByStateId) {
+        this.listJurisdictionDistrictByStateId = listJurisdictionDistrictByStateId;
+    }
+
+    public regionState getRegionState() {
+        return regionState;
+    }
+
+    public void setRegionState(regionState regionState) {
+        this.regionState = regionState;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getPopulation() {
+        return population;
+    }
+
+    public void setPopulation(Integer population) {
+        this.population = population;
+    }
+
     
 
 
