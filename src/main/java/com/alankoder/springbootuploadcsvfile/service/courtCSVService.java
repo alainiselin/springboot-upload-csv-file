@@ -17,8 +17,11 @@ public class courtCSVService {
     courtCourtRepository courtRepository;
 
     public void save(MultipartFile file) {
+        System.out.println("until before try");
         try {
+            System.out.println("inside courtCSVService try");
             List<courtCourt> listCourts = courtCSVHelper.csvToCourt(file.getInputStream());
+            System.out.println("csv to Court success");
             courtRepository.saveAll(listCourts);
         } catch (IOException e) {
             throw new RuntimeException("fail to store csv data: " + e.getMessage());

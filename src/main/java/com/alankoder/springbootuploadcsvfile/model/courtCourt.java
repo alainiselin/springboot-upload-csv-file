@@ -17,11 +17,12 @@ import javax.persistence.Table;
 public class courtCourt {
 
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @OneToMany(mappedBy = "courtCourt", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<jurisdictionJurisdictionDistrict> listJurisdictionDistrictByCourtCircuitNumber = new ArrayList<jurisdictionJurisdictionDistrict>();
+    /* @OneToMany(mappedBy = "courtCourt", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<jurisdictionJurisdictionDistrict> listJurisdictionDistrictByCourtCircuitNumber = new ArrayList<jurisdictionJurisdictionDistrict>(); */
 
     @Column(name = "name")
     private String name;
@@ -33,18 +34,18 @@ public class courtCourt {
 
     }
 
-    public courtCourt(long id, List<jurisdictionJurisdictionDistrict> listJurisdictionDistrictByCourtCircuitNumber,
+/*     public courtCourt(long id, List<jurisdictionJurisdictionDistrict> listJurisdictionDistrictByCourtCircuitNumber,
             String name, Integer courtCircuitNumber) {
         this.id = id;
         this.listJurisdictionDistrictByCourtCircuitNumber = listJurisdictionDistrictByCourtCircuitNumber;
         this.name = name;
         this.courtCircuitNumber = courtCircuitNumber;
-    }
+    } */
 
-    public courtCourt(long id, Integer courtCircuitNumber, String name) {
+    public courtCourt(long id, String name, Integer courtCircuitNumber) {
         this.id = id;
-        this.courtCircuitNumber = courtCircuitNumber;
         this.name = name;
+        this.courtCircuitNumber = courtCircuitNumber;
     }
 
     public long getId() {
@@ -55,14 +56,14 @@ public class courtCourt {
         this.id = id;
     }
 
-    public List<jurisdictionJurisdictionDistrict> getListJurisdictionDistrictByCourtCircuitNumber() {
+    /* public List<jurisdictionJurisdictionDistrict> getListJurisdictionDistrictByCourtCircuitNumber() {
         return listJurisdictionDistrictByCourtCircuitNumber;
     }
 
     public void setListJurisdictionDistrictByCourtCircuitNumber(
             List<jurisdictionJurisdictionDistrict> listJurisdictionDistrictByCourtCircuitNumber) {
         this.listJurisdictionDistrictByCourtCircuitNumber = listJurisdictionDistrictByCourtCircuitNumber;
-    }
+    } */
 
     public String getName() {
         return name;

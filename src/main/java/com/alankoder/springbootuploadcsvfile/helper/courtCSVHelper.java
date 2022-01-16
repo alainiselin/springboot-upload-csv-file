@@ -16,7 +16,7 @@ import com.alankoder.springbootuploadcsvfile.model.courtCourt;
 
 public class courtCSVHelper {
     public static String TYPE = "text/csv";
-    static String[] HEADERs = { "id", "courtCircuitNumber", "name" };
+    static String[] HEADERs = { "id", "name", "courtCircuitNumber" };
 
     public static boolean hasCSVFormat(MultipartFile file) {
 
@@ -28,6 +28,7 @@ public class courtCSVHelper {
     }
 
     public static List<courtCourt> csvToCourt(InputStream is) {
+        System.out.println("inside csvToCourt");
         try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
                 CSVParser csvParser = new CSVParser(fileReader,
                         CSVFormat.DEFAULT.withFirstRecordAsHeader().withIgnoreHeaderCase().withTrim());) {
@@ -36,17 +37,20 @@ public class courtCSVHelper {
 
             Iterable<CSVRecord> csvRecords = csvParser.getRecords();
 
+            System.out.println("until for loop");
+
             for (CSVRecord csvRecord : csvRecords) {
                 courtCourt court = new courtCourt(
                         Long.parseLong(csvRecord.get("id")),
-                        Integer.parseInt(csvRecord.get("courtCircuitNumber")),
-                        csvRecord.get("name"));
+                        csvRecord.get("name"),
+                        Integer.parseInt(csvRecord.get("courtCircuitNumber")));
 
                 listCourts.add(court);
             }
 
             return listCourts;
         } catch (IOException e) {
+            System.out.println("had Exception");
             throw new RuntimeException("fail to parse CSV file: " + e.getMessage());
         }
     }
