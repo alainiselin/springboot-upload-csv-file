@@ -22,7 +22,7 @@ public class jurisdictionJurisdictionDistrict {
     @JoinColumn(name = "courtCircuitNumber", referencedColumnName = "courtCircuitNumber")
     private courtCourt courtCourt;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "state_id", referencedColumnName = "state_id")
     private areaCounty areaCounty;
 
@@ -45,6 +45,14 @@ public class jurisdictionJurisdictionDistrict {
         this.id = id;
         this.courtCourt = courtCourt;
         this.areaCounty = areaCounty;
+        this.jurisdictionDistrictName = jurisdictionDistrictName;
+        this.chiefJudge = chiefJudge;
+        this.distance = distance;
+    }
+
+    public jurisdictionJurisdictionDistrict(long id, String jurisdictionDistrictName, String chiefJudge,
+            Double distance) {
+        this.id = id;
         this.jurisdictionDistrictName = jurisdictionDistrictName;
         this.chiefJudge = chiefJudge;
         this.distance = distance;

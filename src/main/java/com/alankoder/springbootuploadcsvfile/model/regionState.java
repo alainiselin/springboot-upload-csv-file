@@ -17,20 +17,27 @@ public class regionState extends areaCounty {
     @Column(name = "state_id")
     private String state_id;
 
-    @OneToMany(mappedBy = "regionState", cascade = CascadeType.ALL, orphanRemoval = true)
+/*     @OneToMany(mappedBy = "regionState", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<areaCounty> listCountyByStateId = new ArrayList<>();
+ */
 
     public regionState() {
 
     }
 
-    public regionState(long id, List<jurisdictionJurisdictionDistrict> listJurisdictionDistrictByStateId,
-            regionState regionState, String name, Integer population, Double growth, String state_id,
-            List<areaCounty> listCountyByStateId) {
-        super(id, listJurisdictionDistrictByStateId, regionState, name, population);
+
+
+    public regionState(long id, /* List<jurisdictionJurisdictionDistrict> listJurisdictionDistrictByStateId,
+            regionState regionState, */ String name, Integer population, Double growth, String state_id) {
+        super(id, /* listJurisdictionDistrictByStateId, regionState, */ name, population);
         this.growth = growth;
         this.state_id = state_id;
-        this.listCountyByStateId = listCountyByStateId;
+    }
+
+
+    public regionState(Double growth, String state_id){
+        this.growth = growth;
+        this.state_id = state_id;
     }
 
     public Double getGrowth() {
@@ -49,14 +56,14 @@ public class regionState extends areaCounty {
         this.state_id = state_id;
     }
 
-    public List<areaCounty> getListCountyByStateId() {
+ /*    public List<areaCounty> getListCountyByStateId() {
         return listCountyByStateId;
     }
 
     public void setListCountyByStateId(List<areaCounty> listCountyByStateId) {
         this.listCountyByStateId = listCountyByStateId;
     }
-
+ */
     
 
 }

@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -35,7 +36,7 @@ public class areaCounty {
     )
     private List<jurisdictionJurisdictionDistrict> listJurisdictionDistrictByStateId = new ArrayList<jurisdictionJurisdictionDistrict>();
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "state_id", referencedColumnName = "state_id")
     private regionState regionState;
 
@@ -54,6 +55,12 @@ public class areaCounty {
         this.id = id;
         this.listJurisdictionDistrictByStateId = listJurisdictionDistrictByStateId;
         this.regionState = regionState;
+        this.name = name;
+        this.population = population;
+    }
+
+    public areaCounty(long id, String name, Integer population){
+        this.id = id;
         this.name = name;
         this.population = population;
     }
