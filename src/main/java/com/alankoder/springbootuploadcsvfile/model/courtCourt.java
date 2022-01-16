@@ -41,6 +41,11 @@ public class courtCourt {
         this.courtCircuitNumber = courtCircuitNumber;
     }
 
+    public courtCourt(long id, String name, Integer courtCircuitNumber){
+        this.id = id;
+        this.name = name;
+        this.courtCircuitNumber = courtCircuitNumber;
+    }
     
 
 }
