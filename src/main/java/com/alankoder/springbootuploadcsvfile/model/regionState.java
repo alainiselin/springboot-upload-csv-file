@@ -6,64 +6,44 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+//State muss als erstes eingelesen werden -> sonst ID Fehler
 @Entity
 public class regionState extends areaCounty {
+
+
+    @Column(name = "state_name")
+    private String state_name;
 
     @Column(name = "growth")
     private Double growth;
 
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "state_id")
     private String state_id;
 
 /*     @OneToMany(mappedBy = "regionState", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<areaCounty> listCountyByStateId = new ArrayList<>();
- */
+    private List<areaCounty> listAreaCounty = new ArrayList<areaCounty>(); */
 
     public regionState() {
 
     }
 
-
-
-    public regionState(long id, /* List<jurisdictionJurisdictionDistrict> listJurisdictionDistrictByStateId,
-            regionState regionState, */ String name, Integer population, Double growth, String state_id) {
-        super(id, /* listJurisdictionDistrictByStateId, regionState, */ name, population);
+/*     public regionState(String state_name, Double growth, String state_id, List<areaCounty> listAreaCounty) {
+        this.state_name = state_name;
         this.growth = growth;
         this.state_id = state_id;
-    }
+        this.listAreaCounty = listAreaCounty;
+    } */
 
-
-    public regionState(Double growth, String state_id){
+    public regionState(String state_name, /* String state_id, */ Double growth) {
+        this.state_name = state_name;
         this.growth = growth;
-        this.state_id = state_id;
+        /* this.state_id = state_id; */
     }
-
-    public Double getGrowth() {
-        return growth;
-    }
-
-    public void setGrowth(Double growth) {
-        this.growth = growth;
-    }
-
-    public String getState_id() {
-        return state_id;
-    }
-
-    public void setState_id(String state_id) {
-        this.state_id = state_id;
-    }
-
- /*    public List<areaCounty> getListCountyByStateId() {
-        return listCountyByStateId;
-    }
-
-    public void setListCountyByStateId(List<areaCounty> listCountyByStateId) {
-        this.listCountyByStateId = listCountyByStateId;
-    }
- */
-    
 
 }

@@ -23,6 +23,7 @@ public class regionCSVService {
             List<regionState> listStates = regionCSVHelper.csvToRegion(file.getInputStream());
             System.out.println("csv to Region success");
             regionRepository.saveAll(listStates);
+            System.out.println("regionRepository.safeAll success");
         } catch (IOException e) {
             throw new RuntimeException("fail to store csv data: " + e.getMessage());
         }

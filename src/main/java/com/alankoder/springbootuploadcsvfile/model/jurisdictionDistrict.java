@@ -11,8 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "jurisdictionJurisdictionDistrict")
-public class jurisdictionJurisdictionDistrict {
+@Table(name = "jurisdictionDistrict")
+public class jurisdictionDistrict {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,9 +20,9 @@ public class jurisdictionJurisdictionDistrict {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "courtCircuitNumber", referencedColumnName = "courtCircuitNumber")
-    private courtCourt courtCourt;
+    private court courtCourt;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "state_id", referencedColumnName = "state_id")
     private areaCounty areaCounty;
 
@@ -35,11 +35,11 @@ public class jurisdictionJurisdictionDistrict {
     @Column(name = "distance")
     private Double distance;
 
-    public jurisdictionJurisdictionDistrict() {
+    public jurisdictionDistrict() {
 
     }
 
-    public jurisdictionJurisdictionDistrict(long id, com.alankoder.springbootuploadcsvfile.model.courtCourt courtCourt,
+    public jurisdictionDistrict(long id, com.alankoder.springbootuploadcsvfile.model.court courtCourt,
             com.alankoder.springbootuploadcsvfile.model.areaCounty areaCounty, String jurisdictionDistrictName,
             String chiefJudge, Double distance) {
         this.id = id;
@@ -50,59 +50,11 @@ public class jurisdictionJurisdictionDistrict {
         this.distance = distance;
     }
 
-    public jurisdictionJurisdictionDistrict(long id, String jurisdictionDistrictName, String chiefJudge,
+    public jurisdictionDistrict(long id, String jurisdictionDistrictName, String chiefJudge,
             Double distance) {
         this.id = id;
         this.jurisdictionDistrictName = jurisdictionDistrictName;
         this.chiefJudge = chiefJudge;
-        this.distance = distance;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public courtCourt getCourtCourt() {
-        return courtCourt;
-    }
-
-    public void setCourtCourt(courtCourt courtCourt) {
-        this.courtCourt = courtCourt;
-    }
-
-    public areaCounty getAreaCounty() {
-        return areaCounty;
-    }
-
-    public void setAreaCounty(areaCounty areaCounty) {
-        this.areaCounty = areaCounty;
-    }
-
-    public String getJurisdictionDistrictName() {
-        return jurisdictionDistrictName;
-    }
-
-    public void setJurisdictionDistrictName(String jurisdictionDistrictName) {
-        this.jurisdictionDistrictName = jurisdictionDistrictName;
-    }
-
-    public String getChiefJudge() {
-        return chiefJudge;
-    }
-
-    public void setChiefJudge(String chiefJudge) {
-        this.chiefJudge = chiefJudge;
-    }
-
-    public Double getDistance() {
-        return distance;
-    }
-
-    public void setDistance(Double distance) {
         this.distance = distance;
     }
 

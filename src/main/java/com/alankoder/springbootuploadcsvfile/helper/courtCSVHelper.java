@@ -12,7 +12,7 @@ import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.alankoder.springbootuploadcsvfile.model.courtCourt;
+import com.alankoder.springbootuploadcsvfile.model.court;
 
 public class courtCSVHelper {
     public static String TYPE = "text/csv";
@@ -27,20 +27,20 @@ public class courtCSVHelper {
         return true;
     }
 
-    public static List<courtCourt> csvToCourt(InputStream is) {
+    public static List<court> csvToCourt(InputStream is) {
         System.out.println("inside csvToCourt");
         try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
                 CSVParser csvParser = new CSVParser(fileReader,
                         CSVFormat.DEFAULT.withFirstRecordAsHeader().withIgnoreHeaderCase().withTrim());) {
 
-            List<courtCourt> listCourts = new ArrayList<courtCourt>();
+            List<court> listCourts = new ArrayList<court>();
 
             Iterable<CSVRecord> csvRecords = csvParser.getRecords();
 
             System.out.println("until court for-loop");
 
             for (CSVRecord csvRecord : csvRecords) {
-                courtCourt court = new courtCourt(
+                court court = new court(
                         Long.parseLong(csvRecord.get("id")),
                         csvRecord.get("name"),
                         Integer.parseInt(csvRecord.get("courtCircuitNumber")));

@@ -1,9 +1,9 @@
 package com.alankoder.springbootuploadcsvfile.repository;
 
-import com.alankoder.springbootuploadcsvfile.model.cityCity;
+import com.alankoder.springbootuploadcsvfile.model.city;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface cityCityRepository extends JpaRepository<cityCity, Long> {
+public interface cityCityRepository extends JpaRepository<city, Long> {
 
 }

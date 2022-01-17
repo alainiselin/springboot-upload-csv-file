@@ -8,7 +8,7 @@ import java.util.List;
 import com.alankoder.springbootuploadcsvfile.helper.courtCSVHelper;
 import com.alankoder.springbootuploadcsvfile.message.ResponseMessage;
 import com.alankoder.springbootuploadcsvfile.service.courtCSVService;
-import com.alankoder.springbootuploadcsvfile.model.courtCourt;
+import com.alankoder.springbootuploadcsvfile.model.court;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -46,9 +46,9 @@ public class courtController {
     }
 
     @GetMapping("/courts")
-    public ResponseEntity<List<courtCourt>> getAllCourts() {
+    public ResponseEntity<List<court>> getAllCourts() {
         try {
-            List<courtCourt> listCourts = fileService.getAllCourts();
+            List<court> listCourts = fileService.getAllCourts();
 
             if (listCourts.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);

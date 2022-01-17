@@ -3,9 +3,9 @@ package com.alankoder.springbootuploadcsvfile.service;
 import java.io.IOException;
 import java.util.List;
 
-import com.alankoder.springbootuploadcsvfile.model.courtCourt;
+import com.alankoder.springbootuploadcsvfile.model.court;
 import com.alankoder.springbootuploadcsvfile.helper.courtCSVHelper;
-import com.alankoder.springbootuploadcsvfile.repository.courtCourtRepository;
+import com.alankoder.springbootuploadcsvfile.repository.courtRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,13 +14,13 @@ import org.springframework.web.multipart.MultipartFile;
 @Service
 public class courtCSVService {
     @Autowired
-    courtCourtRepository courtRepository;
+    courtRepository courtRepository;
 
     public void save(MultipartFile file) {
         System.out.println("until before try");
         try {
             System.out.println("inside courtCSVService try");
-            List<courtCourt> listCourts = courtCSVHelper.csvToCourt(file.getInputStream());
+            List<court> listCourts = courtCSVHelper.csvToCourt(file.getInputStream());
             System.out.println("csv to Court success");
             courtRepository.saveAll(listCourts);
         } catch (IOException e) {
@@ -28,7 +28,7 @@ public class courtCSVService {
         }
     }
 
-    public List<courtCourt> getAllCourts() {
+    public List<court> getAllCourts() {
         return courtRepository.findAll();
     }
 }
