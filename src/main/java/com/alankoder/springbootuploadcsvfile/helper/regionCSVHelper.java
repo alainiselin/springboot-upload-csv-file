@@ -16,7 +16,7 @@ import com.alankoder.springbootuploadcsvfile.model.regionState;
 
 public class regionCSVHelper {
     public static String TYPE = "text/csv";
-    static String[] HEADERs = { "id", "state_name", /* "state_id", */ "growth" };
+    static String[] HEADERs = { "id", "state_name", "state_id", "growth" };
 
     public static boolean hasCSVFormat(MultipartFile file) {
 
@@ -42,7 +42,7 @@ public class regionCSVHelper {
             for (CSVRecord csvRecord : csvRecords) {
                 regionState region = new regionState(
                         csvRecord.get("state_name"),
-                        /* csvRecord.get("state_id"), */
+                        csvRecord.get("state_id"),
                         Double.parseDouble(csvRecord.get("growth")));
 
                 listRegions.add(region);

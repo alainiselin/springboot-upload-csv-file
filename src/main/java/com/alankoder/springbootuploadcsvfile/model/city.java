@@ -1,7 +1,5 @@
 package com.alankoder.springbootuploadcsvfile.model;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
@@ -17,7 +15,5 @@ public class city extends areaCounty {
     public city() {
 
     }
-
-    
 
 }

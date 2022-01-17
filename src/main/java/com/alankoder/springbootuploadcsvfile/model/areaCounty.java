@@ -17,8 +17,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.AttributeAccessor;
-
 @Entity
 @Table(name = "areaCounty")
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -38,7 +36,6 @@ public class areaCounty {
     private List<jurisdictionDistrict> listJurisdictionDistrictByStateId = new ArrayList<jurisdictionDistrict>();
 
     // benötigt Fremdschlüssel state_id
-   
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "state_id", referencedColumnName = "state_id")
     private regionState regionState;
