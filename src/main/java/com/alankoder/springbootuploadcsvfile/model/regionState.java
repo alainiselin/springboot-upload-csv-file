@@ -1,11 +1,9 @@
 package com.alankoder.springbootuploadcsvfile.model;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-
 
 //State muss nach dummy counties eingelesen werden sonst foreign key fehler
 @Entity

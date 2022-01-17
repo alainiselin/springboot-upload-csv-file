@@ -16,7 +16,7 @@ import com.alankoder.springbootuploadcsvfile.model.regionState;
 
 public class regionCSVHelper {
     public static String TYPE = "text/csv";
-    static String[] HEADERs = { "id", "state_name", "state_id", "growth" };
+    static String[] HEADERs = { "state_name", "state_id", "growth" };
 
     public static boolean hasCSVFormat(MultipartFile file) {
 
