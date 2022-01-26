@@ -16,4 +16,11 @@ public class city extends areaCounty {
 
     }
 
+    public city(String city_name, Integer density) {
+        this.city_name = city_name;
+        this.density = density;
+    }
+
+    
+
 }
