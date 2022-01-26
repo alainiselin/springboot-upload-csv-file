@@ -18,9 +18,9 @@ public class cityCSVService {
     public void save(MultipartFile file) {
         System.out.println("until before try");
         try {
-            System.out.println("inside courtCSVService try");
+            System.out.println("inside cityCSVService try");
             List<city> listCity = cityCSVHelper.csvToCity(file.getInputStream());
-            System.out.println("csv to Court success");
+            System.out.println("csv to City success");
             cityRepository.saveAll(listCity);
         } catch (IOException e) {
             throw new RuntimeException("fail to store csv data: " + e.getMessage());

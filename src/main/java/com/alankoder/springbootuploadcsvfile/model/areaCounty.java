@@ -1,9 +1,5 @@
 package com.alankoder.springbootuploadcsvfile.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -14,7 +10,6 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -25,15 +20,6 @@ public class areaCounty {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-
-    @OneToMany(mappedBy = "areaCounty", // points to field that owns the relationship, it's jurisdiction because in the
-                                        // jurisdiction entity the area is referenced
-            cascade = CascadeType.ALL, // each operation performed on the area entity will be propagated to the entitys
-                                       // of the list
-            orphanRemoval = true // if we remove the area entity also the entitys stored in the list will be
-                                 // removed
-    )
-    private List<jurisdictionDistrict> listJurisdictionDistrictByStateId = new ArrayList<jurisdictionDistrict>();
 
     // benötigt Fremdschlüssel state_id
     @ManyToOne(fetch = FetchType.LAZY)
@@ -48,6 +34,46 @@ public class areaCounty {
 
     public areaCounty() {
 
+    }
+
+    public areaCounty(long id, com.alankoder.springbootuploadcsvfile.model.regionState regionState, String county_name,
+            Integer population) {
+        this.id = id;
+        this.regionState = regionState;
+        this.county_name = county_name;
+        this.population = population;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public regionState getRegionState() {
+        return regionState;
+    }
+
+    public void setRegionState(regionState regionState) {
+        this.regionState = regionState;
+    }
+
+    public String getCounty_name() {
+        return county_name;
+    }
+
+    public void setCounty_name(String county_name) {
+        this.county_name = county_name;
+    }
+
+    public Integer getPopulation() {
+        return population;
+    }
+
+    public void setPopulation(Integer population) {
+        this.population = population;
     }
 
 }

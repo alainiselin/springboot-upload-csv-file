@@ -23,14 +23,15 @@ public class jurisdictionDistrict {
     private court courtCourt;
 
     @ManyToOne
-    @JoinColumn(name = "state_id", referencedColumnName = "state_id")
     private areaCounty areaCounty;
 
     @Column(name = "jurisdictionDistrictName")
     private String jurisdictionDistrictName;
 
-    @Column(name = "chiefJudge")
-    private String chiefJudge;
+    /*
+     * @Column(name = "chiefJudge")
+     * private String chiefJudge;
+     */
 
     @Column(name = "distance")
     private Double distance;
@@ -39,22 +40,53 @@ public class jurisdictionDistrict {
 
     }
 
-    public jurisdictionDistrict(long id, com.alankoder.springbootuploadcsvfile.model.court courtCourt,
+    public jurisdictionDistrict(long id, court courtCourt,
             com.alankoder.springbootuploadcsvfile.model.areaCounty areaCounty, String jurisdictionDistrictName,
-            String chiefJudge, Double distance) {
+            Double distance) {
         this.id = id;
         this.courtCourt = courtCourt;
         this.areaCounty = areaCounty;
         this.jurisdictionDistrictName = jurisdictionDistrictName;
-        this.chiefJudge = chiefJudge;
         this.distance = distance;
     }
 
-    public jurisdictionDistrict(long id, String jurisdictionDistrictName, String chiefJudge,
-            Double distance) {
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
         this.id = id;
+    }
+
+    public court getCourtCourt() {
+        return courtCourt;
+    }
+
+    public void setCourtCourt(court courtCourt) {
+        this.courtCourt = courtCourt;
+    }
+
+    public areaCounty getAreaCounty() {
+        return areaCounty;
+    }
+
+    public void setAreaCounty(areaCounty areaCounty) {
+        this.areaCounty = areaCounty;
+    }
+
+    public String getJurisdictionDistrictName() {
+        return jurisdictionDistrictName;
+    }
+
+    public void setJurisdictionDistrictName(String jurisdictionDistrictName) {
         this.jurisdictionDistrictName = jurisdictionDistrictName;
-        this.chiefJudge = chiefJudge;
+    }
+
+    public Double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(Double distance) {
         this.distance = distance;
     }
 

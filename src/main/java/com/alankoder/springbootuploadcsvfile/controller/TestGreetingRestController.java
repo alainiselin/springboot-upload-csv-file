@@ -9,7 +9,7 @@ public class TestGreetingRestController {
 
     @GetMapping("/greeting")
     public String getGreeting() {
-        return "D Sarina isch horny uf de Ally Law";
+        return "Ally Law";
     }
 
 }
