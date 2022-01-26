@@ -2,8 +2,6 @@ package com.alankoder.springbootuploadcsvfile.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 
 //State muss nach dummy counties eingelesen werden sonst foreign key fehler
 @Entity
@@ -15,7 +13,6 @@ public class regionState extends areaCounty {
     @Column(name = "growth")
     private Double growth;
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "state_id")
     private String state_id;
 

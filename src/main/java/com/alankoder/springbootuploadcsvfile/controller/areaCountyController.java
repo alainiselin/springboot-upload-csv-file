@@ -43,4 +43,16 @@ public class areaCountyController {
             return new ResponseEntity<areaCounty>(HttpStatus.NOT_FOUND);
         }
     }
+
+    @GetMapping("/areaCounty/wp4/{id}")
+	public ResponseEntity<Long> findareaCounty(@PathVariable("id") long id) {
+		Optional<Long> result = this.areaCountyRepository.findAreaCounty(id);
+		
+		if(result.isPresent()) {
+			return new ResponseEntity<Long>(result.get(), HttpStatus.OK);
+		} else {
+			return new ResponseEntity<Long>(HttpStatus.NOT_FOUND);
+		}
+	}
+	
 }

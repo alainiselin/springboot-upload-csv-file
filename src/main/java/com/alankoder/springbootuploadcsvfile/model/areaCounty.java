@@ -2,13 +2,11 @@ package com.alankoder.springbootuploadcsvfile.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -22,8 +20,7 @@ public class areaCounty {
     private long id;
 
     // benötigt Fremdschlüssel state_id
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "state_id", referencedColumnName = "state_id")
+    @ManyToOne
     private regionState regionState;
 
     @Column(name = "county_name")
